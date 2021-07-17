@@ -22,4 +22,6 @@ echo -e "\e[33mMESSAGE IN YELLOW\e[0m"
 
 #Colours once enabled will print the other lines in same colour.So we need to disable them once done.
 
-echo "Hello Bhai,em sangathi?"
+echo -e "\e[36mNamasthe Anna\e[0m"
+
+echo -e "Endho emo"
