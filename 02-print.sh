@@ -24,4 +24,4 @@ echo -e Hello Bhai,\n\t Namasthe
 
 echo -e "\e[31mMESSAGE IN RED"
 
-echo -e "\e[33mMESSAGE IN YELLOW
+echo -e "\e[33mMESSAGE IN YELLOW"
