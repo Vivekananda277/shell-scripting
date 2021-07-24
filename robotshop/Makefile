@@ -7,10 +7,10 @@ Frontend:	## Install Frontend Component
 Catalogue:	## Install Catalogue Component
 	@echo Installing Catalogue
 
-Cart:	## Install Cart Component
+Cart:		## Install Cart Component
 	@echo Installing Cart
 
-User:	## Install User Component
+User:		## Install User Component
 	@echo Installing User
 
 Shipping:	## Install Shipping Component
@@ -22,10 +22,10 @@ Payment:	## Install Payment Component
 MongodB:	## Install MongodB Component
 	@echo Installing MongodB
 
-Redis:	## Install Redis Component
+Redis:		## Install Redis Component
 	@echo Installing Redis
 
-MySQL:	## Install MySQL Component
+MySQL:		## Install MySQL Component
 	@echo Installing MySQL
 
 Rabbitmq:	## Install Rabbitmq Component
