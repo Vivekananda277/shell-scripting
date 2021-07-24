@@ -1,4 +1,4 @@
-help:			##Print this line
+help:		##Print this line
 	fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep |sed -e 's/##//'
 
 Frontend:	## Install Frontend Component
