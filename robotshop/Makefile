@@ -19,8 +19,8 @@ Shipping:	## Install Shipping Component
 Payment:	## Install Payment Component
 	@echo Installing Payment
 
-MongodB:	## Install MongodB Component
-	@echo Installing MongodB
+MongodB:	## Install Mongodb Component
+	@echo Installing Mongodb
 
 Redis:		## Install Redis Component
 	@echo Installing Redis
@@ -30,3 +30,5 @@ MySQL:		## Install MySQL Component
 
 Rabbitmq:	## Install Rabbitmq Component
 	@echo Installing Rabbitmq
+
+databases: mongodb redis mysql rabbitmq
