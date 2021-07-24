@@ -1,4 +1,4 @@
-frontend:
+Frontend:
 	@echo Installing Frontend
 
 Catalogue:
