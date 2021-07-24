@@ -28,5 +28,5 @@ Redis:	## Install Redis Component
 MySQL:	## Install MySQL Component
 	@echo Installing MySQL
 
-Rabbitmq: ## Install Rabbitmq Component
+Rabbitmq:	## Install Rabbitmq Component
 	@echo Installing Rabbitmq
