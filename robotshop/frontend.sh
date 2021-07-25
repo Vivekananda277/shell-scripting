@@ -29,5 +29,3 @@ STAT_CHECK $?
 ##  1.Output shouldn't be displayed on the terminal
 ##  2.Validate if the command has been executed successfully
 ## 3.Need to validate whether the script is running as a root user
-
-}
