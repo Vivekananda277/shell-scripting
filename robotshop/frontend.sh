@@ -4,9 +4,9 @@ LOG=/tmp/robotshop.log
 rm -f $LOG
 echo -e -n "Installing Nginx"
 yum install nginx -y &>> $LOG
-if [ $? -eq 0 ] ;
+if "[ $? -eq 0 ]" ;
 then
-  echo -e -n "\e[32m done[0m"
+  echo -e -n "\e[32m done \e[0m"
 else
   echo Failed
 fi
@@ -16,8 +16,8 @@ fi
 
 echo "Enabling Nginx"
 systemctl enable nginx &>> $LOG
-if [ $? -eq 0 ]; then
-  echo -e -n "\e[32m done\e[0m"
+if "[ $? -eq 0 ]"; then
+  echo -e -n "\e[32m done \e[0m"
 else
   echo Failed
 fi
