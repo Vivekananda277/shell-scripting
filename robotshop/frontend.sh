@@ -2,10 +2,9 @@
 
 LOG=/tmp/robotshop.log
 rm -f $LOG
-echo -e -n "Installing Nginx"
+echo -e "Installing Nginx"
 yum install nginx -y &>> $LOG
-if [ $? -eq 0 ] ;
-then
+if [ $? -eq 0 ] ; then
   echo -e "\e[32m done\e[0m"
 else
   echo Failed
