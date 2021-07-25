@@ -1,18 +1,6 @@
 #!/bin/bash
 
-LOG=/tmp/robotshop.log
-rm -f $LOG
-STAT_CHECK(){
-  if [ $1 -eq 0 ] ; then ###Here we are using $1 because while calling the function we are giving an argument to STAT_CHECK().So $LOG becomes $1
-  echo -e "\e[32m done\e[0m"
-else
-  echo -e "\e[31m Failed\e[0m"
-  exit 1
-fi
-}
-PRINT(){
-  echo -n -e "$1\t\t"
-  }
+source = common.sh
 
 PRINT "Installing Nginx"
 yum install nginx -y &>> $LOG ## Redirecting the output to $LOG and it is in /tmp/robot shop.log
