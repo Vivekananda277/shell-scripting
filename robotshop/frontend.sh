@@ -6,7 +6,7 @@ echo -e -n "Installing Nginx"
 yum install nginx -y &>> $LOG
 if [ $? -eq 0 ] ;
 then
-  echo "done"
+  echo done
 else
   echo Failed
 fi
