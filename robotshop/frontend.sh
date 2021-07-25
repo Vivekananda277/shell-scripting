@@ -23,7 +23,7 @@ fi
 
 echo "Starting Nginx"
 systemctl start nginx &>> $LOG
-if( $>-eq 0);then
+if( $?-eq 0);then
   echo -e "\e[34m done\e[0m"
 else
   echo Failed
