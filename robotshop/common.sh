@@ -1,5 +1,10 @@
 #!/bin/bash
 
+USER_ID=$(id -u)
+if [ $USER_ID -ne 0 ]; then
+  echo -e "\e[ You should be either root/sudo user to run this script"
+  exit 2
+fi
 LOG=/tmp/robotshop.log
 rm -f $LOG
 STAT_CHECK(){
@@ -13,9 +18,3 @@ fi
 PRINT(){
   echo -n -e "$1\t\t"
   }
-
-USER_ID=$(id -u)
-if [ $USER_ID -ne 0 ]; then
-  echo -e "\e[You should be either root/sudo user to run this script"
-  exit 2
-fi
