@@ -1,4 +1,4 @@
 #!/usr/bin/bash
-echo"Hello"
+echo Hello
 exit 100
 echo Bye
