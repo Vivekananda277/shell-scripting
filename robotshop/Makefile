@@ -1,7 +1,7 @@
 help:		 ##Print this line
 	fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep |sed -e 's/##//'
 
-Frontend:	## Install Frontend Component
+frontend:	## Install Frontend Component
 	@bash frontend.sh
 
 Catalogue:	## Install Catalogue Component
