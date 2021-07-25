@@ -5,7 +5,7 @@ rm -f $LOG
 echo -e -n "Installing Nginx"
 yum install nginx -y &>> $LOG
 if "[ $? -eq 0 ]"; then
-  echo -e "\e[32m done\e[0m"
+  echo done
 else
   echo Failed
 fi
@@ -15,7 +15,7 @@ fi
 
 echo "Enabling Nginx"
 systemctl enable nginx &>> $LOG
-if "[ $? -eq 0 ]";then
+if "[ $? -eq 0 ]"; then
   echo -e "\e[32m done\e[0m"
 else
   echo Failed
@@ -23,7 +23,7 @@ fi
 
 echo "Starting Nginx"
 systemctl start nginx &>> $LOG
-if "[ $? -eq 0 ]";then
+if "[ $? -eq 0 ]"; then
   echo -e "\e[34m done\e[0m"
 else
   echo Failed
