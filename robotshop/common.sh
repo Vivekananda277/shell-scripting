@@ -15,7 +15,7 @@ PRINT(){
   }
 
 USER_ID=$(id -u)
-if[ $USER_ID -ne 0 ];then
+if[ $USER_ID -ne 0 ] ; then
   echo -e "\e[You should be either root/sudo user to run this script"
   exit 2
 }
