@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source = common.sh
+source common.sh
 
 PRINT "Installing Nginx"
 yum install nginx -y &>> $LOG ## Redirecting the output to $LOG and it is in /tmp/robot shop.log
