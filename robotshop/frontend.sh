@@ -7,7 +7,7 @@ yum install nginx -y &>> $LOG
 if [ $? -eq 0 ] ; then
   echo -e "\e[32m done\e[0m"
 else
-  echo Failed
+  echo -e "\e[31m Failed\e[0m"
 fi
 ##  1.Output shouldn't be displayed on the terminal
 ##  2.Validate if the command has been executed successfully
@@ -18,7 +18,7 @@ systemctl enable nginx &>> $LOG
 if [ $? -eq 0 ]; then
   echo -e "\e[32m done\e[0m"
 else
-  echo Failed
+  echo -e "\e[31m Failed\e[0m"
 fi
 
 echo -e -n "Starting Nginx"
@@ -26,5 +26,5 @@ systemctl start nginx &>> $LOG
 if [ $? -eq 0 ] ; then
   echo -e "\e[32m done\e[0m"
 else
-  echo failed
+  echo -e "\e[31m Failed\e[0m"
 fi
