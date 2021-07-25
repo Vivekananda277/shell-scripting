@@ -4,31 +4,31 @@ help:		 ##Print this line
 frontend:	## Install Frontend Component
 	@bash frontend.sh
 
-Catalogue:	## Install Catalogue Component
+catalogue:	## Install Catalogue Component
 	@bash catalogue.sh
 
-Cart:		## Install Cart Component
+cart:		## Install Cart Component
 	@bash cart.sh
 
-User:		## Install User Component
+user:		## Install User Component
 	@bash user.sh
 
-Shipping:	## Install Shipping Component
+shipping:	## Install Shipping Component
 	@bash shipping.sh
 
-Payment:	## Install Payment Component
+payment:	## Install Payment Component
 	@bash payment.sh
 
-MongodB:	## Install Mongodb Component
+mongodb:	## Install Mongodb Component
 	@bash mongodb.sh
 
-Redis:		## Install Redis Component
+redis:		## Install Redis Component
 	@bash redis.sh
 
-MySQL:		## Install MySQL Component
+mysql:		## Install MySQL Component
 	@bash mysql.sh
 
-Rabbitmq:	## Install Rabbitmq Component
+rabbitmq:	## Install Rabbitmq Component
 	@bash rabbitmq.sh
 
 databases:	## Install all Databases
