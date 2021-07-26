@@ -18,16 +18,16 @@ PRINT "Remove old Html docs"
 cd /usr/share/nginx/html && rm -rf * &>> $LOG
 STAT_CHECK $?
 
-PRINT "\t\tExtract Frontend Archive"
+PRINT "Extract Frontend Archive"
 unzip /tmp/frontend.zip &>> $LOG
 STAT_CHECK $?
 
-PRINT "Move Frontend"
-mv frontend-main/* . && mv static/* . && rm -rf frontend-master static &>>$LOG
+PRINT "Move Frontend\t"
+mv frontend-main/* . && mv static/* . && rm -rf frontend-master static &>> $LOG
 STAT_CHECK $?
 
 PRINT "Update Roboshop Config"
-mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> LOG
+mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $LOG
 STAT_CHECK $?
 
 PRINT "Enabling Nginx\t"
