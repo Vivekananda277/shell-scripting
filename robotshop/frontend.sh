@@ -24,7 +24,7 @@ STAT_CHECK $?
 
 
 PRINT "Update Roboshop Config"
-mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> LOG
+mv localhost.conf /etc/nginx/default.d/robotshop.conf &>> LOG
 STAT_CHECK $?
 
 PRINT "Enabling Nginx\t"
