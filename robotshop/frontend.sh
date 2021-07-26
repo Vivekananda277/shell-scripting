@@ -18,10 +18,11 @@ PRINT "Remove old Html docs"
 cd /usr/share/nginx/html && rm -rf * &>> $LOG
 STAT_CHECK $?
 
-PRINT "Extract Frontend Archive"
+PRINT "\t\tExtract Frontend Archive"
 unzip /tmp/frontend.zip &>> $LOG
 STAT_CHECK $?
 
+PRINT "Move Frontend"
 mv frontend-main/* . && mv static/* . && rm -rf frontend-master static &>>$LOG
 STAT_CHECK $?
 
