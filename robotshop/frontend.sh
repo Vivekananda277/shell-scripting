@@ -15,7 +15,7 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/fron
 STAT_CHECK $?
 
 PRINT "Remove old Html docs"
-cd /usr/share/nginx/html && rm -rf* &>> $LOG
+cd /usr/share/nginx/html && rm -rf * &>> $LOG
 STAT_CHECK $?
 
 PRINT "Extract Frontend Archive"
