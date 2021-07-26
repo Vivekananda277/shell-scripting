@@ -22,7 +22,7 @@ PRINT "Extract Frontend Archive"
 unzip /tmp/frontend.zip &>> $LOG
 STAT_CHECK $?
 
-PRINT "Move Frontend\t"
+PRINT "Move Frontend\t\t"
 mv frontend-main/* . && mv static/* . && rm -rf frontend-master static &>> $LOG
 STAT_CHECK $?
 
