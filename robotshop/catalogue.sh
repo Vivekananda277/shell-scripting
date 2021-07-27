@@ -2,7 +2,7 @@
 
 source common.sh
 
-PRINT "Install NodeJS"
+PRINT "Install NodeJS\t\t"
 yum install nodejs make gcc-c++ -y &>>$LOG
 STAT_CHECK $?
 
