@@ -25,6 +25,6 @@ PRINT "Download MongoDB Service\t"
 curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"&>>$LOG
 
 PRINT "Load Schema\t\t\t"
-cd /tmp && unzip -o mongodb.zip && cd mongodb-main && mongo < catalogue.js && mongo < users.js &>>LOG #-o is used to override previous file
+cd /tmp && unzip -o mongodb.zip && cd mongodb-main && mongo < catalogue.js && mongo < users.js &>>LOG #-o is used to overwrite previous file
 STAT_CHECK $?
 
