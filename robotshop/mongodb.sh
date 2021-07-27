@@ -15,7 +15,7 @@ yum install -y mongodb-org &>>$LOG
 STAT_CHECK $?
 
 PRINT "Update Listen IP address"
-sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf&>>$LOG
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf&>>$LOG ## sed "s(search)/Previous/New one"
 STAT_CHECK $?
 
 systemctl enable mongod &>>$LOG && systemctl start mongod &>>$LOG
@@ -25,6 +25,6 @@ PRINT "Download MongoDB Service\t"
 curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"&>>$LOG
 
 PRINT "Load Schema\t\t\t"
-cd /tmp && unzip -o mongodb.zip && cd mongodb-main && mongo < catalogue.js && mongo < users.js &>>LOG
+cd /tmp && unzip -o mongodb.zip && cd mongodb-main && mongo < catalogue.js && mongo < users.js &>>LOG #-o is used to override previous file
 STAT_CHECK $?
 
