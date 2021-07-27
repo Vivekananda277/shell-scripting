@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source= common.sh
+source common.sh
 
 PRINT "Install NodeJS"
 yum install nodejs make gcc-c++ -y &>>$LOG
