@@ -15,7 +15,7 @@ yum install -y mongodb-org &>>$LOG
 STAT_CHECK $?
 
 PRINT "Update Listen IP address"
-sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf&>>$LOG ## sed "s(search)/Previous/New one"
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf&>>$LOG ## sed "s(search)/Previous/New one"  file path name
 STAT_CHECK $?
 
 systemctl enable mongod &>>$LOG && systemctl start mongod &>>$LOG
