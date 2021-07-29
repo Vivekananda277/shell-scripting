@@ -18,11 +18,11 @@ PRINT "Update Listen IP address"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>>$LOG ## sed "s(search)/Previous/New one"  file path name
 STAT_CHECK $?
 
-PRINT "Start MongoDB"
+PRINT "Start MongoDB\t\t"
 systemctl enable mongod &>>$LOG && systemctl start mongod &>>$LOG
 STAT_CHECK $?
 
-PRINT "Download MongoDB Service\t"
+PRINT "Download MongoDB Service"
 curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG
 STAT_CHECK $?
 
