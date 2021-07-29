@@ -15,17 +15,17 @@ yum install -y mongodb-org &>>$LOG
 STAT_CHECK $?
 
 PRINT "Update Listen IP address"
-sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf&>>$LOG ## sed "s(search)/Previous/New one"  file path name
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>>$LOG ## sed "s(search)/Previous/New one"  file path name
 STAT_CHECK $?
 
+PRINT "Start MongoDB"
 systemctl enable mongod &>>$LOG && systemctl start mongod &>>$LOG
 STAT_CHECK $?
 
 PRINT "Download MongoDB Service\t"
-curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"&>>$LOG
+curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG
 STAT_CHECK $?
 
 PRINT "Load Schema\t\t"
 cd /tmp && unzip -o mongodb.zip &>>$LOG && cd mongodb-main && mongo < catalogue.js &>>$LOG && mongo < users.js &>>LOG #-o is used to overwrite previous file
 STAT_CHECK $?
-
