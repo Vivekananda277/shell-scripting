@@ -26,8 +26,12 @@ PRINT "Move Frontend\t\t"
 mv frontend-main/* . && mv static/* . && rm -rf frontend-master static &>> $LOG
 STAT_CHECK $?
 
-PRINT "Update Roboshop Config\t"
+PRINT "Copy Roboshop Config\t"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $LOG
+STAT_CHECK $?
+
+PRINT "Update Roboshop Config\t"
+sed -i -e '/catalogue/ s/localhost/catalogue.robotshop.internal' /etc/nginx/default.d/roboshop.conf
 STAT_CHECK $?
 
 PRINT "Enabling Nginx\t\t"
