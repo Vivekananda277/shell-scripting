@@ -8,13 +8,13 @@ STAT_CHECK $?
 
 PRINT "Add Robotshop Application user"
 id roboshop &>>$LOG
-if [ $? -ne 0 ]; then
+if [ $? -ne 0 ]; then # $? here represents the output above command either 0 or non-zero
  useradd roboshop &>>$LOG
 fi
 STAT_CHECK $?
 
 PRINT "Download Application Code"
-$ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"&>>$LOG
+$ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>$LOG
 STAT_CHECK $?
 
 PRINT "Extract Downloaded Code"
