@@ -24,3 +24,7 @@ STAT_CHECK $?
 PRINT "Download NodeJS dependencies"
 cd /home/roboshop/catalogue && npm install --unsafe-prem &>>$LOG
 STAT_CHECK $?
+
+PRINT "Fix Application Permissions"
+chown roboshop:roboshop /home/roboshop -R &>>LOG
+STAT_CHECK $?
