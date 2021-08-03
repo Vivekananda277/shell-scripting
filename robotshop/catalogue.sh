@@ -17,7 +17,7 @@ PRINT "Download Application Code"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>$LOG
 STAT_CHECK $?
 
-PRINT "Extract Downloaded Code"
+PRINT "Extract Downloaded Code\t"
 cd /home/roboshop && unzip -o /tmp/catalogue.zip && mv catalogue-main catalogue &>>$LOG
 STAT_CHECK $?
 
