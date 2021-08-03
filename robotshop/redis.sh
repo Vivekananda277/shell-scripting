@@ -14,6 +14,6 @@ PRINT "Update Redis Listen Address"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis.conf
 STAT_CHECK $?
 
-PRINT "Redis Database Service\t"
+PRINT "Start Redis Database Service\t"
 systemctl enable redis &>> $LOG && systemctl start redis &>>$LOG
 STAT_CHECK $?
