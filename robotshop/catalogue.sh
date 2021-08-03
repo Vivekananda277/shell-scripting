@@ -20,8 +20,8 @@ STAT_CHECK $?
 PRINT "Extract Downloaded Code"
 cd /home/roboshop && unzip -o /tmp/catalogue.zip && rm -rf catalogue && mv catalogue-main catalogue && cd /home/roboshop/catalogue && npm install --unsafe-prem &>>$LOG
 STAT_CHECK $?
-
 # mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 # systemctl daemon-reload
 # systemctl start catalogue
 # systemctl enable catalogue
+
