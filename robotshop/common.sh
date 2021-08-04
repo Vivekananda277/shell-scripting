@@ -20,3 +20,40 @@ PRINT(){
   echo -e "#######################\t$1##################" &>> $LOG
   echo -n -e "$1\t\t"
   }
+
+NODEJS(){
+  PRINT "Install NodeJS\t\t"
+  yum install nodejs make gcc-c++ -y &>>$LOG
+  STAT_CHECK $?
+
+  PRINT "Add Robotshop Application user"
+  id roboshop &>>$LOG
+  if [ $? -ne 0 ]; then # $? here represents the output above command either 0 or non-zero
+   useradd roboshop &>>$LOG
+  fi
+  STAT_CHECK $?
+
+  PRINT "Download Application Code"
+  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
+  STAT_CHECK $?
+
+  PRINT "Extract Downloaded Code\t"
+  cd /home/roboshop && unzip -o /tmp/${COMPONENT}.zip && mv ${COMPONENT}-main ${COMPONENT} &>>$LOG
+  STAT_CHECK $?
+
+  PRINT "Download NodeJS dependencies"
+  cd /home/roboshop/${COMPONENT} && npm install --unsafe-prem &>>$LOG
+  STAT_CHECK $?
+
+  PRINT "Fix Application Permissions"
+  chown roboshop:roboshop /home/roboshop -R
+  STAT_CHECK $?
+
+  PRINT "Update systemd file\t"
+  sed -i -e "s/MONGO_DNSNAME/mongodb.robotshop.internal/" -e "s/REDIS_ENDPOINT/redis.robotshop.internal"  -e "s/MONGO_ENDPOINT/mongo.robotshop.internal" /home/roboshop/${COMPONENT}/systemd.service && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
+  STAT_CHECK $?
+
+  PRINT "Start ${COMPONENT} service\t"
+  systemctl daemon-reload &>> $LOG && systemctl start ${COMPONENT} &>>$LOG && systemctl enable ${COMPONENT}r &>>$LOG
+  STAT_CHECK $?
+}
