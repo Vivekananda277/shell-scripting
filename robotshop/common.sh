@@ -38,7 +38,7 @@ NODEJS(){
   STAT_CHECK $?
 
   PRINT "Extract Downloaded Code\t"
-  cd /home/roboshop && unzip -o /tmp/${COMPONENT}.zip && rm -rf ${COMPONENT} && mv ${COMPONENT}-main ${COMPONENT} &>>$LOG
+  cd /home/roboshop && unzip -o /tmp/${COMPONENT}.zip && mv ${COMPONENT}-main ${COMPONENT} &>>$LOG
   STAT_CHECK $?
 
   PRINT "Download NodeJS dependencies"
