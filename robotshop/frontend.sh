@@ -31,7 +31,7 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $LOG
 STAT_CHECK $?
 
 PRINT "Update Roboshop Config\t"
-sed -i -e '/catalogue/ s/localhost/catalogue.robotshop.internal/' '/user/ s/localhost/user.robotshop.internal/' /etc/nginx/default.d/roboshop.conf
+sed -i -e '/catalogue/ s/localhost/catalogue.robotshop.internal/' -e '/user/ s/localhost/user.robotshop.internal/' /etc/nginx/default.d/roboshop.conf
 STAT_CHECK $?
 
 PRINT "Enabling Nginx\t\t"
